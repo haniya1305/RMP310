@@ -17,18 +17,6 @@
         app:layout_constraintVertical_bias="0.175"
         app:srcCompat="@drawable/ratemypritch" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="62dp"
-        android:layout_height="47dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
-        app:srcCompat="@drawable/arrowcircleback" />
-
     <EditText
         android:id="@+id/plain_text_input1"
         android:layout_width="285dp"
@@ -80,6 +68,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="76dp"
+        android:layout_height="69dp"
+        android:src="@drawable/arrowcircleback"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
