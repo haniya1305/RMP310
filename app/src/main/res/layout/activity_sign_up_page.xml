@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".sign_up_page">
 
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitXY"
+        android:scaleX="2"
+        android:scaleY="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
     <EditText
         android:id="@+id/plain_text_input1"
         android:layout_width="285dp"
@@ -59,19 +73,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.8" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="76dp"
-        android:layout_height="69dp"
-        android:src="@drawable/arrowcircleback"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.047"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
 
     <ImageView
         android:id="@+id/imageView3"
