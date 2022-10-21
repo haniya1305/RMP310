@@ -31,7 +31,7 @@ public class AssignReview extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Intent intent2 = new Intent(this, my_reviews.class);
+        Intent intent2 = new Intent(this, CurrentReviews.class);
         Bundle bundle = new Bundle();
         assignreview.setOnClickListener(new View.OnClickListener() {
 
@@ -45,15 +45,10 @@ public class AssignReview extends AppCompatActivity {
                 {
                     Toast.makeText(getApplicationContext(), "Comment Inputted Incorrectly", Toast.LENGTH_SHORT).show();
                 }
-                else if (commenthead.getText().toString().length() == 0)
-                {
-                    bundle.putFloat("review", assignedrating.getRating());
-                    startActivity(intent2);
-                }
                 else
                 {
                     bundle.putString("commenthead", commenthead.getText().toString());
-                    bundle.putString("commenthead", commentstext.getText().toString());
+                    bundle.putString("commenttext", commentstext.getText().toString());
                     bundle.putFloat("review", assignedrating.getRating());
                     intent2.putExtras(bundle);
                     startActivity(intent2);
