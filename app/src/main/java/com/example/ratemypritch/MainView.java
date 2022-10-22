@@ -30,7 +30,7 @@ public class MainView extends AppCompatActivity {
             }
         });
 
-        Intent nourished = new Intent(this, CurrentReviews.class);
+        Intent nourished = new Intent(this, departmental_reviews.class);
         nourish.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -39,7 +39,7 @@ public class MainView extends AppCompatActivity {
             }
         });
 
-        Intent grilled = new Intent(this, CurrentReviews.class);
+        Intent grilled = new Intent(this, departmental_reviews.class);
         grill.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -48,7 +48,7 @@ public class MainView extends AppCompatActivity {
             }
         });
 
-        Intent chefed = new Intent(this, CurrentReviews.class);
+        Intent chefed = new Intent(this, departmental_reviews.class);
         chef.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -57,7 +57,7 @@ public class MainView extends AppCompatActivity {
             }
         });
 
-        Intent desserted = new Intent(this, CurrentReviews.class);
+        Intent desserted = new Intent(this, departmental_reviews.class);
         dessert.setOnClickListener(new View.OnClickListener() {
 
             @Override
