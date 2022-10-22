@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
     <EditText
-        android:id="@+id/plain_text_input1"
+        android:id="@+id/email"
         android:layout_width="285dp"
         android:layout_height="45dp"
         android:inputType="text"
@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.65" />
 
     <EditText
-        android:id="@+id/plain_text_input2"
+        android:id="@+id/password"
         android:layout_width="285dp"
         android:layout_height="45dp"
         android:hint="Password"

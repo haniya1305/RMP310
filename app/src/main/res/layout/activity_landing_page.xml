@@ -35,14 +35,14 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="153dp"
-        android:layout_height="34dp"
+        android:layout_width="218dp"
+        android:layout_height="40dp"
         android:background="@android:color/transparent"
         android:text="Forgot your password?"
         android:textAllCaps="false"
         android:textColor="#020202"
         android:textColorHighlight="#000000"
-        android:textSize="10sp"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
