@@ -153,7 +153,7 @@
         app:layout_constraintVertical_bias="0.83" />
 
     <ImageButton
-        android:id="@+id/imageButton1"
+        android:id="@+id/imagebutton"
         android:layout_width="69dp"
         android:layout_height="63dp"
         android:background="#0000"
@@ -167,7 +167,7 @@
         app:srcCompat="@drawable/home_button" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/Settings"
         android:layout_width="85dp"
         android:layout_height="68dp"
         android:background="#0000"
