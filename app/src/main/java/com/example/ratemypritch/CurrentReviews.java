@@ -27,6 +27,7 @@ public class CurrentReviews extends AppCompatActivity {
         Intent intent = new Intent(this, departmental_reviews.class);
         Intent intent2 = new Intent(this, AssignReview.class);
         Intent ratings = getIntent();
+        Bundle bundle2 = new Bundle();
 
         if (ratings.hasExtra("review")) {
             Bundle bundle = ratings.getExtras();
@@ -49,6 +50,10 @@ public class CurrentReviews extends AppCompatActivity {
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                bundle2.putString("title", heading.toString());
+                bundle2.putString("comment", body.toString());
+                bundle2.putFloat("review", totalrating.getRating());
+                intent.putExtras(bundle2);
                 startActivity(intent);
             }
         });
