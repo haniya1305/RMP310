@@ -50,8 +50,8 @@ public class departmental_reviews extends AppCompatActivity {
             public void onClick(View view) {
                 // IF YOU ARE WORKING ON THE PREVIOUS PAGE, USE THIS TO GET THE INFORMATION
                 bundle2.putFloat("review", beyondBar.getRating());
-                bundle2.putString("title", heading);
-                bundle2.putString("comment", body);
+                bundle2.putString("title", heading.toString());
+                bundle2.putString("comment", body.toString());
                 intent2.putExtras(bundle2);
                 startActivity(intent2);
             }
