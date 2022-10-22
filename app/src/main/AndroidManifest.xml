@@ -20,14 +20,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".sign_up_page"
+            android:name=".my_reviews"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".my_reviews"
+            android:name=".LandingPage"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -56,7 +56,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".LandingPage"
+            android:name=".sign_up_page"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

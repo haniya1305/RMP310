@@ -46,7 +46,7 @@
         app:srcCompat="@drawable/grillhouse" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/Settings"
         android:layout_width="147dp"
         android:layout_height="149dp"
         android:scaleType="centerCrop"
@@ -60,7 +60,7 @@
         app:srcCompat="@drawable/nourish" />
 
     <ImageButton
-        android:id="@+id/imageButton1"
+        android:id="@+id/imagebutton"
         android:layout_width="153dp"
         android:layout_height="146dp"
         android:background="#0000"
@@ -69,7 +69,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.86"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageButton2"
+        app:layout_constraintTop_toTopOf="@+id/Settings"
         app:layout_constraintVertical_bias="0.637"
         app:srcCompat="@drawable/dessert" />
 
@@ -83,7 +83,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.128"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageButton2"
+        app:layout_constraintTop_toTopOf="@+id/Settings"
         app:layout_constraintVertical_bias="0.638"
         app:srcCompat="@drawable/chefplate" />
 

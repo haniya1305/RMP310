@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 public class MainView extends AppCompatActivity {
@@ -17,10 +16,10 @@ public class MainView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_view);
         settingsButton = (ImageButton) findViewById(R.id.imageButton5);
-        nourish = (ImageButton) findViewById(R.id.imageButton2);
+        nourish = (ImageButton) findViewById(R.id.Settings);
         grill = (ImageButton) findViewById(R.id.imageButton0);
         chef = (ImageButton) findViewById(R.id.imageButton3);
-        dessert = (ImageButton) findViewById(R.id.imageButton1);
+        dessert = (ImageButton) findViewById(R.id.imagebutton);
 
         Intent intentSettings = new Intent(this, my_reviews.class);
         settingsButton.setOnClickListener(new View.OnClickListener() {
