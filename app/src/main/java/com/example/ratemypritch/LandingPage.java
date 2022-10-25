@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class LandingPage extends AppCompatActivity {
 
@@ -14,6 +18,7 @@ public class LandingPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         Button loglog, signingUp, signUpLater;
+        String uname, pass;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing_page);
@@ -21,6 +26,9 @@ public class LandingPage extends AppCompatActivity {
         loglog = (Button) findViewById(R.id.button6);
         signingUp = (Button) findViewById(R.id.button7);
         signUpLater = (Button) findViewById(R.id.button8);
+        EditText username = (EditText) findViewById(R.id.username);
+        EditText password = (EditText) findViewById(R.id.password);
+
 
 
 
@@ -30,8 +38,13 @@ public class LandingPage extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                loggedin = true;
-                startActivity(intentGoMain);
+                if (username.getText().toString().equals("test@student.ubc.ca") && password.getText().toString().equals("123")){
+                    loggedin = true;
+                    startActivity(intentGoMain);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Incorrect Info", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 

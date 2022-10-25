@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RatingBar;
+import android.widget.TextView;
 
 public class departmental_reviews extends AppCompatActivity {
 
@@ -22,6 +23,9 @@ public class departmental_reviews extends AppCompatActivity {
         RatingBar beyondBar = (RatingBar) findViewById(R.id.beyondBar);
         ImageButton backButton = (ImageButton) findViewById(R.id.backBtn);
         ImageButton forwardButton = (ImageButton) findViewById(R.id.beyondForward);
+        TextView sample = (TextView) findViewById(R.id.textView2);
+
+        //sample.setText("This is a test");
 
         Intent intent = new Intent(this, CurrentReviews.class);
         Intent intent2 = new Intent(this, MainView.class);
@@ -36,6 +40,8 @@ public class departmental_reviews extends AppCompatActivity {
             body = bundle.getString("comment");
             beyondBar.setRating(review);
         }
+
+        //sample.setText(heading);
 
 
         forwardButton.setOnClickListener(new View.OnClickListener() {
