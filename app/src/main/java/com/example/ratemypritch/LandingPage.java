@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 public class LandingPage extends AppCompatActivity {
 
+    DB_Helper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,13 +24,15 @@ public class LandingPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing_page);
 
+        EditText email_signin = (EditText) findViewById(R.id.email);
+        EditText password_signin = (EditText) findViewById(R.id.pass);
+
         loglog = (Button) findViewById(R.id.button6);
         signingUp = (Button) findViewById(R.id.button7);
         signUpLater = (Button) findViewById(R.id.button8);
+        DB = new DB_Helper(this);
         EditText username = (EditText) findViewById(R.id.username);
         EditText password = (EditText) findViewById(R.id.password);
-
-
 
 
         Intent intentGoMain = new Intent(this, MainView.class);
@@ -38,6 +41,23 @@ public class LandingPage extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+//                loggedin = true;
+//                startActivity(intentGoMain);
+
+                String user = email_signin.getText().toString();
+                String pass = password_signin.getText().toString();
+
+                if(user.equals("")||pass.equals(""))
+                    Toast.makeText(LandingPage.this, "Enter all the fields.", Toast.LENGTH_SHORT).show();
+                else {
+                    Boolean checkuserpass = DB.checkusernamepassword(user, pass);
+                    if (checkuserpass == true) {
+                        Toast.makeText(LandingPage.this, "Sign in successful!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), MainView.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(LandingPage.this, "Invalid Account.", Toast.LENGTH_SHORT).show();
+                    }
                 if (username.getText().toString().equals("test@student.ubc.ca") && password.getText().toString().equals("123")){
                     loggedin = true;
                     startActivity(intentGoMain);
