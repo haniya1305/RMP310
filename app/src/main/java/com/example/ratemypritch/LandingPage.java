@@ -39,8 +39,8 @@ public class LandingPage extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-//                loggedin = true;
-//                startActivity(intentGoMain);
+                loggedin = true;
+                startActivity(intentGoMain);
 
                 String user = email_signin.getText().toString();
                 String pass = password_signin.getText().toString();

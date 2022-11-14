@@ -14,11 +14,14 @@ public class departmental_reviews extends AppCompatActivity {
 
     //private Button
     private String heading, body;
+    DB_Helper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_departmental_reviews);
+
+        DB = new DB_Helper(this);
 
         RatingBar beyondBar = (RatingBar) findViewById(R.id.beyondBar);
         ImageButton backButton = (ImageButton) findViewById(R.id.backBtn);
@@ -40,6 +43,8 @@ public class departmental_reviews extends AppCompatActivity {
             body = bundle.getString("comment");
             beyondBar.setRating(review);
         }
+
+        beyondBar.setRating(DB.avgreview());
 
         //sample.setText(heading);
 

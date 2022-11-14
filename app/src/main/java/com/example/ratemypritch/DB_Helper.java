@@ -18,12 +18,17 @@ public class DB_Helper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase MyDB) {
+        MyDB.execSQL("create Table ratings(ratingid INTEGER primary key, rating FLOAT)");
         MyDB.execSQL("create Table users(username TEXT primary key, password TEXT)");
+        MyDB.execSQL("create Table reviews(reviewid INTEGER primary key, reviewhead TEXT, reviewbot TEXT)");
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase MyDB, int i, int i1) {
+        MyDB.execSQL("drop Table if exists ratings");
         MyDB.execSQL("drop Table if exists users");
+        MyDB.execSQL("drop Table if exists reviews");
     }
 
     public Boolean insertData(String username, String password){
@@ -35,6 +40,40 @@ public class DB_Helper extends SQLiteOpenHelper {
         if(result==-1) return false;
         else
             return true;
+    }
+    public Boolean insertReview(int reviewid, String reviewhead, String reviewbot){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues contentValues= new ContentValues();
+        contentValues.put("reviewid", reviewid);
+        contentValues.put("reviewhead", reviewhead);
+        contentValues.put("reviewbot", reviewbot);
+        long result = MyDB.insert("reviews", null, contentValues);
+        if(result==-1) return false;
+        else
+            return true;
+    }
+
+    public Boolean insertRatings(int ratingid, Float rating){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        ContentValues contentValues= new ContentValues();
+        contentValues.put("ratingid", ratingid);
+        contentValues.put("rating", rating);
+        long result = MyDB.insert("ratings", null, contentValues);
+        if(result==-1) return false;
+        else
+            return true;
+    }
+    public int reviewidassign() {
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("Select * from ratings", new String[]{});
+        return cursor.getCount();
+    }
+
+    public float avgreview(){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("Select AVG(rating) AS avgrating FROM ratings", null);
+        cursor.moveToFirst();
+        return cursor.getFloat(0);
     }
 
     public Boolean checkusername(String username) {

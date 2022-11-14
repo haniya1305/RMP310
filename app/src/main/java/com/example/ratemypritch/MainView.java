@@ -11,11 +11,12 @@ import android.widget.TextView;
 
 public class MainView extends AppCompatActivity {
     private String heading, body;
+    DB_Helper DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         ImageButton settingsButton, nourish, grill, chef, dessert;
-
         super.onCreate(savedInstanceState);
+        DB = new DB_Helper(this);
         setContentView(R.layout.activity_main_view);
         TextView titleView = (TextView) findViewById(R.id.textView1);
         settingsButton = (ImageButton) findViewById(R.id.imageButton5);
@@ -27,6 +28,8 @@ public class MainView extends AppCompatActivity {
 
         Intent rating  = getIntent();
         Bundle bundle = rating.getExtras();
+
+        stars.setRating(DB.avgreview());
 
         if (rating.hasExtra("review")) {
 

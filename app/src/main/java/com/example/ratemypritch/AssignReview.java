@@ -10,8 +10,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.Toast;
-
+import android.util.Log;
 public class AssignReview extends AppCompatActivity {
+
+    DB_Helper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,7 @@ public class AssignReview extends AppCompatActivity {
         RatingBar assignedrating = (RatingBar) findViewById(R.id.ratingBar);
         ImageButton backbutton = (ImageButton) findViewById(R.id.imageButton6);
         ImageButton assignreview = (ImageButton) findViewById(R.id.imageButton);
+        DB = new DB_Helper(this);
 
         Intent intent = new Intent(this, CurrentReviews.class);
         backbutton.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +53,11 @@ public class AssignReview extends AppCompatActivity {
                     bundle.putString("commenthead", commenthead.getText().toString());
                     bundle.putString("commenttext", commentstext.getText().toString());
                     bundle.putFloat("review", assignedrating.getRating());
+                    if(commenthead.getText().toString().length() > 0)
+                    {
+                        DB.insertReview(DB.reviewidassign(), commenthead.getText().toString(), commentstext.getText().toString());
+                    }
+                    DB.insertRatings(DB.reviewidassign(), assignedrating.getRating());
                     intent2.putExtras(bundle);
                     startActivity(intent2);
                 }

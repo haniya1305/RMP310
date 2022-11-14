@@ -11,12 +11,16 @@ import android.widget.TextView;
 
 public class CurrentReviews extends AppCompatActivity {
 
+    DB_Helper DB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current_reviews);
         ImageButton backbutton = (ImageButton) findViewById(R.id.imageButton3);
         ImageButton createbutton = (ImageButton) findViewById(R.id.imageButton8);
+
+        DB = new DB_Helper(this);
 
         TextView heading = (TextView) findViewById(R.id.textView3);
         TextView body = (TextView) findViewById(R.id.textView5);
@@ -26,26 +30,27 @@ public class CurrentReviews extends AppCompatActivity {
 
         Intent intent = new Intent(this, departmental_reviews.class);
         Intent intent2 = new Intent(this, AssignReview.class);
-        Intent ratings = getIntent();
+        //Intent ratings = getIntent();
         Bundle bundle2 = new Bundle();
+        totalrating.setRating(DB.avgreview());
 
-        if (ratings.hasExtra("review")) {
+        /*if (ratings.hasExtra("review")) {
             Bundle bundle = ratings.getExtras();
             String commenthead = bundle.getString("commenthead");
             String commentext = bundle.getString("commenttext");
-            Float review = bundle.getFloat("review");
             if (commenthead.length() > 0)
             {
                 heading.setText(commenthead);
                 body.setText(commentext);
-                totalrating.setRating(review);
+                totalrating.setRating(2.0f);
                 userrating.setRating(review);
             }
             else
             {
-                totalrating.setRating(review);
+                totalrating.setRating(2.0f);
             }
         }
+         */
 
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
