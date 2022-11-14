@@ -66,6 +66,8 @@ public class LandingPage extends AppCompatActivity {
             }
         });
 
+
+
         Intent intentUnsigned = new Intent(this, MainView.class);
         signUpLater.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
