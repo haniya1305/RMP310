@@ -4,11 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class LandingPage extends AppCompatActivity {
@@ -18,7 +16,7 @@ public class LandingPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Button loglog, signingUp, signUpLater;
+        Button loglog, signUp, signUpLater;
         String uname, pass;
 
         super.onCreate(savedInstanceState);
@@ -28,11 +26,11 @@ public class LandingPage extends AppCompatActivity {
         EditText password_signin = (EditText) findViewById(R.id.pass);
 
         loglog = (Button) findViewById(R.id.button6);
-        signingUp = (Button) findViewById(R.id.button7);
+        signUp = (Button) findViewById(R.id.button7);
         signUpLater = (Button) findViewById(R.id.button8);
         DB = new DB_Helper(this);
-        EditText username = (EditText) findViewById(R.id.username);
-        EditText password = (EditText) findViewById(R.id.password);
+        EditText username = (EditText) findViewById(R.id.email);
+        EditText password = (EditText) findViewById(R.id.pass);
 
 
         Intent intentGoMain = new Intent(this, MainView.class);
@@ -47,31 +45,22 @@ public class LandingPage extends AppCompatActivity {
                 String user = email_signin.getText().toString();
                 String pass = password_signin.getText().toString();
 
-                if(user.equals("")||pass.equals(""))
+                if (user.equals("") || pass.equals(""))
                     Toast.makeText(LandingPage.this, "Enter all the fields.", Toast.LENGTH_SHORT).show();
                 else {
                     Boolean checkuserpass = DB.checkusernamepassword(user, pass);
                     if (checkuserpass == true) {
                         Toast.makeText(LandingPage.this, "Sign in successful!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), MainView.class);
-                        startActivity(intent);
+                        startActivity(intentGoMain);
                     } else {
                         Toast.makeText(LandingPage.this, "Invalid Account.", Toast.LENGTH_SHORT).show();
                     }
-                if (username.getText().toString().equals("test@student.ubc.ca") && password.getText().toString().equals("123")){
-                    loggedin = true;
-                    startActivity(intentGoMain);
-                } else {
-                    Toast.makeText(getApplicationContext(), "Incorrect Info", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
 
         Intent intentSignUp = new Intent(this, sign_up_page.class);
-        signingUp.setOnClickListener(new View.OnClickListener() {
-
-            @Override
+        signUp.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 startActivity(intentSignUp);
             }
@@ -79,11 +68,10 @@ public class LandingPage extends AppCompatActivity {
 
         Intent intentUnsigned = new Intent(this, MainView.class);
         signUpLater.setOnClickListener(new View.OnClickListener() {
-
-            @Override
             public void onClick(View view) {
                 startActivity(intentUnsigned);
             }
         });
+
     }
 }
