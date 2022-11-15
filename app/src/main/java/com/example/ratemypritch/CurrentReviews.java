@@ -22,17 +22,61 @@ public class CurrentReviews extends AppCompatActivity {
 
         DB = new DB_Helper(this);
 
-        TextView heading = (TextView) findViewById(R.id.textView3);
-        TextView body = (TextView) findViewById(R.id.textView5);
+        TextView heading1 = (TextView) findViewById(R.id.textView3);
+        TextView body1 = (TextView) findViewById(R.id.textView5);
+
+        TextView heading2 = (TextView) findViewById(R.id.textView8);
+        TextView body2 = (TextView) findViewById(R.id.textView7);
+
+        TextView heading3 = (TextView) findViewById(R.id.textView10);
+        TextView body3 = (TextView) findViewById(R.id.textView9);
 
         RatingBar totalrating = (RatingBar) findViewById(R.id.ratingBar2);
-        RatingBar userrating = (RatingBar) findViewById(R.id.ratingBar4);
+
+        RatingBar userrating1 = (RatingBar) findViewById(R.id.ratingBar4);
+        RatingBar userrating2 = (RatingBar) findViewById(R.id.ratingBar5);
+        RatingBar userrating3 = (RatingBar) findViewById(R.id.ratingBar8);
 
         Intent intent = new Intent(this, departmental_reviews.class);
         Intent intent2 = new Intent(this, AssignReview.class);
         //Intent ratings = getIntent();
         Bundle bundle2 = new Bundle();
         totalrating.setRating(DB.avgreview());
+
+        if(DB.reviewidassign() > 2)
+        {
+
+            heading1.setText(DB.getReviewtop(DB.reviewidassign() - 1));
+            body1.setText(DB.getReviewbot(DB.reviewidassign() - 1));
+            userrating1.setRating(DB.getRating(DB.getRatingidatreview(DB.reviewidassign() - 1)));
+
+            heading2.setText(DB.getReviewtop(DB.reviewidassign() - 2));
+            body2.setText(DB.getReviewbot(DB.reviewidassign() - 2));
+            userrating2.setRating(DB.getRating(DB.getRatingidatreview(DB.reviewidassign() - 2)));
+
+            heading3.setText(DB.getReviewtop(DB.reviewidassign() - 3));
+            body3.setText(DB.getReviewbot(DB.reviewidassign() - 3));
+            userrating3.setRating(DB.getRating(DB.getRatingidatreview(DB.reviewidassign() - 3)));
+        }
+        else if (DB.reviewidassign() == 2)
+        {
+
+            heading1.setText(DB.getReviewtop(DB.reviewidassign() - 1));
+            body1.setText(DB.getReviewbot(DB.reviewidassign() - 1));
+            userrating1.setRating(DB.getRating(DB.getRatingidatreview(DB.reviewidassign() - 1)));
+
+            heading2.setText(DB.getReviewtop(DB.reviewidassign() - 2));
+            body2.setText(DB.getReviewbot(DB.reviewidassign() - 2));
+            userrating2.setRating(DB.getRating(DB.getRatingidatreview(DB.reviewidassign() - 2)));
+        }
+        else if (DB.reviewidassign() == 1)
+        {
+            heading1.setText(DB.getReviewtop(DB.reviewidassign() - 1));
+            body1.setText(DB.getReviewbot(DB.reviewidassign() - 1));
+            userrating1.setRating(DB.getRating(DB.getRatingidatreview(DB.reviewidassign() - 1)));
+        }
+
+
 
         /*if (ratings.hasExtra("review")) {
             Bundle bundle = ratings.getExtras();
@@ -55,8 +99,6 @@ public class CurrentReviews extends AppCompatActivity {
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bundle2.putString("title", heading.toString());
-                bundle2.putString("comment", body.toString());
                 bundle2.putFloat("review", totalrating.getRating());
                 intent.putExtras(bundle2);
                 startActivity(intent);

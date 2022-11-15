@@ -5,8 +5,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import androidx.annotation.Nullable;
+import android.util.Log;
 
 public class DB_Helper extends SQLiteOpenHelper {
 
@@ -20,7 +19,7 @@ public class DB_Helper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase MyDB) {
         MyDB.execSQL("create Table ratings(ratingid INTEGER primary key, rating FLOAT)");
         MyDB.execSQL("create Table users(username TEXT primary key, password TEXT)");
-        MyDB.execSQL("create Table reviews(reviewid INTEGER primary key, reviewhead TEXT, reviewbot TEXT)");
+        MyDB.execSQL("create Table reviews(reviewid INTEGER primary key, reviewhead TEXT, reviewbot TEXT, ratingid INTEGER)");
 
     }
 
@@ -41,12 +40,13 @@ public class DB_Helper extends SQLiteOpenHelper {
         else
             return true;
     }
-    public Boolean insertReview(int reviewid, String reviewhead, String reviewbot){
+    public Boolean insertReview(int reviewid, String reviewhead, String reviewbot, int ratingid){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues= new ContentValues();
         contentValues.put("reviewid", reviewid);
         contentValues.put("reviewhead", reviewhead);
         contentValues.put("reviewbot", reviewbot);
+        contentValues.put("ratingid", ratingid);
         long result = MyDB.insert("reviews", null, contentValues);
         if(result==-1) return false;
         else
@@ -63,11 +63,54 @@ public class DB_Helper extends SQLiteOpenHelper {
         else
             return true;
     }
-    public int reviewidassign() {
+
+    public int ratingidassign() {
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from ratings", new String[]{});
         return cursor.getCount();
     }
+
+    public int reviewidassign() {
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        Cursor cursor = MyDB.rawQuery("Select * from reviews", new String[]{});
+        return cursor.getCount();
+    }
+
+    public int getRatingidatreview(int reviewid) {
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        String revid = String.valueOf(reviewid);
+        Cursor cursor = MyDB.rawQuery("Select * from reviews where reviewid = ?", new String[]{revid});
+        cursor.moveToFirst();
+        return cursor.getInt(3);
+    }
+
+    public float getRating(int ratingid){
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        String ratid = String.valueOf(ratingid);
+        Cursor cursor = MyDB.rawQuery("Select * from ratings where ratingid = ?", new String[]{ratid});
+        cursor.moveToFirst();
+        Log.i("ratingfloat", String.valueOf(cursor.getFloat(1)));
+        return cursor.getFloat(1);
+    }
+
+    public String getReviewtop(int reviewid) {
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        String revid = String.valueOf(reviewid);
+        Cursor cursor = MyDB.rawQuery("Select * from reviews where reviewid = ?", new String[]{revid});
+        cursor.moveToFirst();
+        Log.i("reviewtopat2", String.valueOf(cursor.getString(1)));
+        return cursor.getString(1);
+    }
+
+    public String getReviewbot(int reviewid) {
+        SQLiteDatabase MyDB = this.getWritableDatabase();
+        String revid = String.valueOf(reviewid);
+        Cursor cursor = MyDB.rawQuery("Select * from reviews where reviewid = ?", new String[]{revid});
+        cursor.moveToFirst();
+        Log.i("reviewBOTat2", String.valueOf(cursor.getString(2)));
+        return cursor.getString(2);
+    }
+
 
     public float avgreview(){
         SQLiteDatabase MyDB = this.getWritableDatabase();

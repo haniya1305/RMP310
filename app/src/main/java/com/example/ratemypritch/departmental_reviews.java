@@ -33,7 +33,6 @@ public class departmental_reviews extends AppCompatActivity {
         Intent intent = new Intent(this, CurrentReviews.class);
         Intent intent2 = new Intent(this, MainView.class);
         Intent rating  = getIntent();
-        Bundle bundle2 = new Bundle();
 
         Bundle bundle = rating.getExtras();
         if (rating.hasExtra("review")) {
@@ -60,10 +59,6 @@ public class departmental_reviews extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // IF YOU ARE WORKING ON THE PREVIOUS PAGE, USE THIS TO GET THE INFORMATION
-                bundle2.putFloat("review", beyondBar.getRating());
-                bundle2.putString("title", heading.toString());
-                bundle2.putString("comment", body.toString());
-                intent2.putExtras(bundle2);
                 startActivity(intent2);
             }
         });
