@@ -16,7 +16,7 @@ In this verison of our project, we worked through the database systems for the l
 **List of Features worked on for this version:**
 - Login/Signup Database System
   Used SQLite to stores the signup information and allows users to login to make reviews. Information is stored on the database and can be accessed even once the program is reopened. Implemented via the DBHelper class created.
-  Outputs for the Login System -
+  Sampple outputs for the Login System -
   
 
   <img src = "https://user-images.githubusercontent.com/69047981/201797430-429c9232-1f3f-4b24-9e3f-27fe1960ca4b.jpeg" width = "170"/>
@@ -27,8 +27,15 @@ In this verison of our project, we worked through the database systems for the l
 
   
 - Database System for the Reviews to be stored
+  Added functions to the DBHelper to store the reviews that users make such as getReviewtop() and getReviewbot(). The review either contains stars for scores or stars along with the comments. This information is stored in the database that can be accessed by its unique ratingId. Also created a for loop to have the latest ratings on the top of the list of menu items.
+  Sample outputs for the Review System -
+  
+  
+  
   
 - Webscraping Nutrislice
+  Exported the Nutrislice website, and used open-sourced libraries to convert it into a csv file. Then, the csv file is then used via SQL to then extract the daily menu information into the User-Interface system for the users to then leave reviews on. 
+  Sample outputs for the Webscraped Data -
   
 
 
