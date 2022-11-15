@@ -6,6 +6,22 @@ Our project is a rating app for the Pritchard Dining Hall. We noticed that with 
 ## How to run the code?
 Our code's final product will be an APK file that can run on android devices. Currently, we are using Android Studio's mobile device emulator to emulate a real phone as we make adjustments to the app.
 
+## What we've done so far?
+We worked through the implementation of the interaction between pages that we first designed on Figma. Once we were happy with our UI design, we divided the work between team members to design the XML pages and then worked on its implementation. 
+
+However, from our last design, we didn't have a proper system for login/signup as well as the review database system. We also just had one dish that is a Pritchard usual that was being reviewed and saved using intents from Android Studios.
+
+In this verison of our project, we worked through the database systems for the login/signup, webscraping through the NutriSlice for the daily menu items, and working through the database connection for the review system. We researched and learnt more about database systems using SQLite and MySQl for both the databases and __ for the webscraping.
+
+List of Features worked on for this version:
+- Login/Signup Database System
+  Used SQLite to stores the signup information and allows users to login to make reviews. Information is stored on the database and can be accessed even once the program is reopened. Implemented via the DBHelper class created.
+- Database System for the Reviews to be stored
+  
+- Webscraping Nutrislice
+  
+
+
 ## Class Organization
 Our classes are organized by each unique page our users will encounter throughout their use of our app. 
 Our classes are as follows:
