@@ -11,6 +11,8 @@ We worked through the implementation of the interaction between pages that we fi
 
 However, from our last design, we didn't have a proper system for login/signup as well as the review database system. We also just had one dish that is a Pritchard usual that was being reviewed and saved using intents from Android Studios.
 
+We then worked through the database systems for the login/signup, webscraping through the NutriSlice for the daily menu items, and working through the database connection for the review system. We researched and learnt more about database systems using SQLite and MySQl for both the databases and for the webscraping.
+
 ## Class Organization
 Our classes are organized by each unique page our users will encounter throughout their use of our app. 
 Our classes are as follows:
