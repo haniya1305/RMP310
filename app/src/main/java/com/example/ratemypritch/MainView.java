@@ -9,22 +9,26 @@ import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import kotlinx.coroutines.MainCoroutineDispatcher;
+
 public class MainView extends AppCompatActivity {
     private String heading, body;
     DB_Helper DB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        ImageButton settingsButton, nourish, grill, chef, dessert;
+        ImageButton settingsButton, nourish, grill, chef, dessert, graph;
         super.onCreate(savedInstanceState);
         DB = new DB_Helper(this);
         setContentView(R.layout.activity_main_view);
         TextView titleView = (TextView) findViewById(R.id.textView1);
         settingsButton = (ImageButton) findViewById(R.id.imageButton5);
+
         nourish = (ImageButton) findViewById(R.id.Settings);
         grill = (ImageButton) findViewById(R.id.imageButton0);
         chef = (ImageButton) findViewById(R.id.imageButton3);
         dessert = (ImageButton) findViewById(R.id.imagebutton);
         RatingBar stars = (RatingBar) findViewById(R.id.ratingBar);
+        graph = (ImageButton) findViewById(R.id.graphButton);
 
         Intent rating  = getIntent();
         Bundle bundle = rating.getExtras();
@@ -87,6 +91,15 @@ public class MainView extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(desserted);
+            }
+        });
+
+        Intent gra = new Intent(this, graph.class);
+        graph.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                startActivity(gra);
             }
         });
     }

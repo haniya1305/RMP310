@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
+//import www.sanju.motiontoast.Motiontoast;
+
 
 public class sign_up_page extends AppCompatActivity {
 
@@ -70,6 +72,12 @@ public class sign_up_page extends AppCompatActivity {
                             Boolean insert = DB.insertData(user, pass);
                             if(insert==true){
                                 Toast.makeText(sign_up_page.this, "User Registered successfully!", Toast.LENGTH_SHORT).show();
+//                                MotionToast.createToast(this,"User Registered successfully!",
+//                                MotionToast.Companion.createToast(sign_up_page.this,”Success Toast”,
+//                                        MotionToast.TOAST_SUCCESS,
+//                                        MotionToast.GRAVITY_BOTTOM,
+//                                        MotionToast.LONG_DURATION,
+//                                        ResourcesCompat.getFont(sign_up_page.this, R.font.helvetica_regular));
                                 Intent intent = new Intent(getApplicationContext(),LandingPage.class);
                                 startActivity(intent);
                             }else{
