@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -17,6 +18,7 @@ public class MainView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         ImageButton settingsButton, nourish, grill, chef, dessert, graph;
+        Button map;
         super.onCreate(savedInstanceState);
         DB = new DB_Helper(this);
         setContentView(R.layout.activity_main_view);
@@ -28,6 +30,7 @@ public class MainView extends AppCompatActivity {
         chef = (ImageButton) findViewById(R.id.imageButton3);
         dessert = (ImageButton) findViewById(R.id.imagebutton);
         RatingBar stars = (RatingBar) findViewById(R.id.ratingBar);
+        map = (Button) findViewById(R.id.button5);
         graph = (ImageButton) findViewById(R.id.graphButton);
 
         Intent rating  = getIntent();
@@ -100,6 +103,15 @@ public class MainView extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(gra);
+            }
+        });
+
+        Intent map1 = new Intent(this, Map.class);
+        map.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                startActivity(map1);
             }
         });
     }

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RateMyPritch</string>
+
+    <string name="api_key">AIzaSyCVN5O3jcn-TrYAZ4mA4wpi36j45N5y3mI</string>
 </resources>
