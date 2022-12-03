@@ -31,7 +31,6 @@ public class MainView extends AppCompatActivity {
         dessert = (ImageButton) findViewById(R.id.imagebutton);
         RatingBar stars = (RatingBar) findViewById(R.id.ratingBar);
         map = (Button) findViewById(R.id.button5);
-        graph = (ImageButton) findViewById(R.id.graphButton);
 
         Intent rating  = getIntent();
         Bundle bundle = rating.getExtras();
