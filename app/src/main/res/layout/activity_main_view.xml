@@ -176,19 +176,6 @@
         app:layout_constraintVertical_bias="0.994"
         app:srcCompat="@drawable/settings" />
 
-    <ImageButton
-        android:id="@+id/graphButton"
-        android:layout_width="59dp"
-        android:layout_height="53dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
-        app:srcCompat="@drawable/graph" />
-
     <Button
         android:id="@+id/button5"
         android:layout_width="71dp"

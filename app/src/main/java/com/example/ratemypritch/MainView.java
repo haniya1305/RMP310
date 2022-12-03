@@ -97,15 +97,6 @@ public class MainView extends AppCompatActivity {
             }
         });
 
-        Intent gra = new Intent(this, graph.class);
-        graph.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                startActivity(gra);
-            }
-        });
-
         Intent map1 = new Intent(this, Map.class);
         map.setOnClickListener(new View.OnClickListener() {
 
