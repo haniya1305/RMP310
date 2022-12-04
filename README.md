@@ -1,5 +1,8 @@
 # RateMyPritch
 
+## Haniya -, 65819849
+## COSC 310 Individual Project
+
 ## What are we about?
 Our project is a rating app for the Pritchard Dining Hall. We noticed that with the variety of food, it can often times be confusing as to what to pick and which foods fit dietary restrictions. Our rating app aims to ease those concerns, with a few clicks of a button, you can rate Pritchard items to see which ones are the right fit for you!
 
@@ -22,3 +25,16 @@ Our classes are as follows:
 - LandingPage (Sign-up page with option to continue without signing up)
 - My_Reviews (List of users current reviews as well as user control buttons)
 - Sign_Up_Page (Sign up page)
+
+## Individual Project
+
+**Feature** - Directions from a student in UBC Vancouver to Pritchard Dining hall that this app has information about.
+**APIs Used** - Google Directions API and Retrofit
+
+In this version, I worked on a version of the RateMyPritch project by adding a directions option to help users find their way to have a bite at the famous Pritchard Dining Hall. I used the Google Directions API along with the Retrofit API to do so. I had to change and build gradles in order to then create an API key to access the google developers code chunks. Then, I created new java files, which are Result, Route and OverviewPolyline to help me create the objects I needed in the Map.java class, said objects being googleMap, apiInterface, list of latitude & longitude and polylineoptions. I used the retrofit API to build a new callAdapterFactory using Google APIs, this was used to create the APInterface. 
+
+### Google Directions: ###
+-
+
+### Retrofit: ### 
+-
