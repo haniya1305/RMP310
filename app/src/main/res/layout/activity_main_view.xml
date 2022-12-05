@@ -176,16 +176,16 @@
         app:layout_constraintVertical_bias="0.994"
         app:srcCompat="@drawable/settings" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="71dp"
-        android:layout_height="39dp"
-        android:text="Map"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.032"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01" />
+<!--    <Button-->
+<!--        android:id="@+id/button5"-->
+<!--        android:layout_width="71dp"-->
+<!--        android:layout_height="39dp"-->
+<!--        android:text="Map"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.032"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.01" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
