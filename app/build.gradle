@@ -45,6 +45,10 @@ dependencies {
 
 //    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
+    //rapidapi for weather and spellcheck
+    implementation 'com.squareup.okhttp3:okhttp:3.0.1'
+    implementation 'com.squareup.okio:okio:3.2.0'
+
     //google directions api
     implementation 'com.google.gms.google-services-location:17.0.0'
     implementation 'com.google.gms.google-services-analytics:17.0.0'
