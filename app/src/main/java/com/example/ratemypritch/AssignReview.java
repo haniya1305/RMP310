@@ -117,5 +117,3 @@ public class AssignReview extends AppCompatActivity {
     }
 
 }
-
-}
