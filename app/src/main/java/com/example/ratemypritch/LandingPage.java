@@ -96,48 +96,35 @@ public class LandingPage extends AppCompatActivity {
     }
 
     void weather() throws IOException {
-
         OkHttpClient client = new OkHttpClient();
-
         Request request = new Request.Builder()
                 .url("https://us-weather-by-zip-code.p.rapidapi.com/getweatherzipcode?zip=94111")
                 .get()
                 .addHeader("X-RapidAPI-Key", "b9dda96a07mshb89e7d029803e5dp1d7b7ejsnb0fa37653bc4")
                 .addHeader("X-RapidAPI-Host", "us-weather-by-zip-code.p.rapidapi.com")
                 .build();
-
 //        Response response = client.newCall(request).execute();
-
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
                 call.cancel();
             }
-
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-
                 final String myResponse = response.body().string();
-
                 LandingPage.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         String[] a = myResponse.split(":");
                         tv.setText("Temperature today is "+a[7].substring(1,a[7].length()-2));  //no need of quotations
-//                        City:"San Francisco"
-//                        State:"CA"
-//                        TempF:"72.0"
-//                        TempC:"22.2" [7]
-//                        Weather:"A Few Clouds"
-//                        WindMPH:"17.3"
-//                        WindDir:"West"
-//                        RelativeHumidity:"57"
-//                        VisibilityMiles:"10.00"
-//                        Code:"Success"
+//                        City:"San Francisco"  State:"CA"
+//                        TempF:"72.0"  TempC:"22.2" [7]
+//                        Weather:"A Few Clouds"    WindMPH:"17.3"
+//                        WindDir:"West"    RelativeHumidity:"57"
+//                        VisibilityMiles:"10.00"   Code:"Success"
 //                        Credits:"499999977"
                     }
                 });
-
             }
         });
     }

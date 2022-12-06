@@ -22,7 +22,7 @@ import okhttp3.Response;
 
 public class AssignReview extends AppCompatActivity {
 
-    DB_Helper DB;
+//    DB_Helper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class AssignReview extends AppCompatActivity {
         RatingBar assignedrating = (RatingBar) findViewById(R.id.ratingBar);
         ImageButton backbutton = (ImageButton) findViewById(R.id.imageButton6);
         ImageButton assignreview = (ImageButton) findViewById(R.id.imageButton);
-        DB = new DB_Helper(this);
+//        DB = new DB_Helper(this);
 
 
         Intent intent = new Intent(this, CurrentReviews.class);
@@ -66,15 +66,15 @@ public class AssignReview extends AppCompatActivity {
                 {
                     Toast.makeText(getApplicationContext(), "Comment Inputted Incorrectly", Toast.LENGTH_SHORT).show();
                 }
-                else
-                {
-                    if(commenthead.getText().toString().length() > 0)
-                    {
-                        DB.insertReview(DB.reviewidassign(), commenthead.getText().toString(), commentstext.getText().toString(), DB.ratingidassign());
-                    }
-                    DB.insertRatings(DB.ratingidassign(), assignedrating.getRating());
-                    startActivity(intent2);
-                }
+//                else
+//                {
+//                    if(commenthead.getText().toString().length() > 0)
+//                    {
+//                        DB.insertReview(DB.reviewidassign(), commenthead.getText().toString(), commentstext.getText().toString(), DB.ratingidassign());
+//                    }
+//                    DB.insertRatings(DB.ratingidassign(), assignedrating.getRating());
+//                    startActivity(intent2);
+//                }
 
             }
         });
@@ -107,7 +107,8 @@ public class AssignReview extends AppCompatActivity {
                 AssignReview.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(getApplicationContext(), "There exists " + myResponse +" grammatical errors!", Toast.LENGTH_SHORT).show();
+                        String[] s = myResponse.split(":");
+                        Toast.makeText(getApplicationContext(), "There exists " + s[1] +" grammatical errors!", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
