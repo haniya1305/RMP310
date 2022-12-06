@@ -29,10 +29,16 @@ Our classes are as follows:
 ## Individual Project
 
 **Feature** - Directions from a student in UBC Vancouver to Pritchard Dining hall that this app has information about. Additionally, helps the user keep their reviews accurately worded by implementing a spell checker for grammatical errors.
+
+
 **APIs Used** - Google Directions API, Retrofit and Jspell
+
+**Description** -
 
 In this version, I worked on a version of the RateMyPritch project by adding a directions option to help users find their way to have a bite at the famous Pritchard Dining Hall. I used the Google Directions API along with the Retrofit API to do so. I had to change and build gradles in order to then create an API key to access the google developers code chunks. Then, I created new java files, which are Result, Route and OverviewPolyline to help me create the objects I needed in the Map.java class, said objects being googleMap, apiInterface, list of latitude & longitude and polylineoptions. I used the retrofit API to build a new callAdapterFactory using Google APIs, this was used to create the APInterface. A newer feature added is the spell checker which makes sure all reviews are formatted and worded correctly so that the essential feature of allowing students to voice their opinions and look for reviews is handled correctly in the sense that they can understand what the other person is saying.
 
+
+**APIs** -
 
 Google Directions API - The Google Directions API is a web service that uses an HTTP request to return JSON or XML-formatted directions between locations. To implement it, I first had to create an API key and placed it in the strings.xml file to access the API resources; additionally I also had to activate internet permissions on Android Studios Manifest file. I added the gradle dependencies I needed for the feature implementation and synced them, now I would be able to work with this API. I then created the required java files to run my functionalities.
 
