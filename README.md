@@ -28,14 +28,17 @@ Our classes are as follows:
 
 ## Individual Project
 
-**Feature** - Directions from a student in UBC Vancouver to Pritchard Dining hall that this app has information about. Additionally, helps the user keep their reviews accurately worded by implementing a spell checker for grammatical errors.
+**Feature** - Directions from a student in UBC Vancouver to Pritchard Dining hall that this app has information about. Additionally, helps the user keep their reviews accurately worded by implementing a spell checker for grammatical errors, along with a weather forecast to the home page which will help users figure out how many layers they need to reach the dining hall without having a frostbite!
 
 
-**APIs Used** - Google Directions API, Retrofit and Jspell
+
+**APIs Used** - Google Directions API, Retrofit, JSpell and Weather
+
 
 **Description** -
 
-In this version, I worked on a version of the RateMyPritch project by adding a directions option to help users find their way to have a bite at the famous Pritchard Dining Hall. I used the Google Directions API along with the Retrofit API to do so. I had to change and build gradles in order to then create an API key to access the google developers code chunks. Then, I created new java files, which are Result, Route and OverviewPolyline to help me create the objects I needed in the Map.java class, said objects being googleMap, apiInterface, list of latitude & longitude and polylineoptions. I used the retrofit API to build a new callAdapterFactory using Google APIs, this was used to create the APInterface. A newer feature added is the spell checker which makes sure all reviews are formatted and worded correctly so that the essential feature of allowing students to voice their opinions and look for reviews is handled correctly in the sense that they can understand what the other person is saying.
+In this version, I worked on a version of the RateMyPritch project by adding a directions option to help users find their way to have a bite at the famous Pritchard Dining Hall. I used the Google Directions API along with the Retrofit API to do so. I had to change and build gradles in order to then create an API key to access the google developers code chunks. Then, I created new java files, which are Result, Route and OverviewPolyline to help me create the objects I needed in the Map.java class, said objects being googleMap, apiInterface, list of latitude & longitude and polylineoptions. I used the retrofit API to build a new callAdapterFactory using Google APIs, this was used to create the APInterface. A newer feature added is the spell checker which makes sure all reviews are formatted and worded correctly so that the essential feature of allowing students to voice their opinions and look for reviews is handled correctly in the sense that they can understand what the other person is saying. As the other new feature is similar to the spellchecker, I was able to easily incorporate the weather API. It is mainly included to help students prepare for their walk down from say the tip of Cassiar down to a fun meal at Pritchard!
+
 
 
 **APIs** -
@@ -45,3 +48,5 @@ Google Directions API - The Google Directions API is a web service that uses an 
 Retrofit - Retrofit is a REST Client for Java and Android API allowing to retrieve and upload JSON (or other structured data) via a REST based You can configure which converters are used for the data serialization. I used the Retrofit API to create an interface to implement the Directions API and files that I created earlier. I used the .build() function to create the apis from the url.
 
 JSpell - JSpell is an API used for basic spell check and finding grammatical errors. I implemented it using RapidAPI, generated the API key by creating an account and then implementing the code for creating a request to use the data and then build it. I then created the functions required to make the toast messages in order to alert the user about the number of errors in their text.
+
+Weather By Zip Code - This is an api I found that would help students know what the temperature is before they decide to go to the dining hall to eat their meal. Ideally, as they see the menu before leaving, it will help them decide if they need a jacket or extra layers.  I implemented it using RapidAPI, generated the API key by creating an account and then wrote the code for creating a request to use the data and then build it. I then created the functions required to make the textview messages in order to print a string on textView which is the current temperature.
